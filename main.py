@@ -10,7 +10,7 @@ CORS(app)
 
 # Load typo correction map
 try:
-    with open("./auto_correct/typos.json") as f:
+    with open("typos.json") as f:
         TYPO_MAP = json.load(f)
 except FileNotFoundError:
     TYPO_MAP = {}
