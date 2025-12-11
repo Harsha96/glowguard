@@ -18,7 +18,7 @@ except FileNotFoundError:
 
 print("Loading GlowGuard knowledge base...")
 emb_model = SentenceTransformer('all-MiniLM-L6-v2')
-client = chromadb.Client(settings=chromadb.Settings(chroma_db_impl="duckdb+parquet",persist_directory="./glowguard_db")) 
+client = chromadb.PersistentClient(path="./glowguard_db")
 collection = client.get_collection("skincare_kb")
 print("API ready!")
 
